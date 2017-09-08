@@ -1,3 +1,30 @@
-<p>
-  register works!
-</p>
+<div class="registerModule">
+  <div class="container">
+    <h1>Register</h1>
+    <form [formGroup]='registerForm' (ngSubmit)="onSubmit(registerForm.value)">
+      <div class="form-group">
+        <label for="email">Username</label>
+        <input type="email" class="form-control" placeholder="Username" name="Username" required formControlName='username'>
+      </div>
+      <div></div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" placeholder="Password" id="password" name="password" required formControlName='password'>
+      </div>
+
+      <p>Tags</p>
+      <div>
+        <input type="checkbox" />HTML
+      </div>
+      <div>
+        <input type="checkbox" />CSS
+      </div>
+      <div>
+        <input type="checkbox" />JAvascript
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success" [disabled]='!registerForm.valid'>Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
