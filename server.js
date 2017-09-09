@@ -33,7 +33,7 @@ app.post('/login', routes.user.login);
 app.post('/register', routes.user.register);
 
 // Restfull API to logout the user
-app.get('/logout', routes.user.logout);
+app.post('/logout', routes.user.logout);
 
 // Restfull API to get the questions list
 app.get('/getQuestions', routes.questions.getQuestions);

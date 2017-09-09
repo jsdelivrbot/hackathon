@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var mongodbURL = 'mongodb://mclabs:1234@ds041536.mlab.com:41536/mclabs';
+var mongodbURL = 'mongodb://digigyan:digigyan1234@ds131854.mlab.com:31854/digigyan';
 var mongodbOptions = {};
 
 // MongoDB connection
