@@ -1,6 +1,10 @@
 <div class="search">
     <input type="text" placeholder="Search a Question">
 </div>
-<app-subquestions></app-subquestions>
-<app-subquestions></app-subquestions>
+<!-- <ul>
+   <li *ngFor="let i of questions.questions" >
+    {{i.name}}
+  </li>
+</ul> -->
+<app-subquestions [questions] = questions ></app-subquestions>
 

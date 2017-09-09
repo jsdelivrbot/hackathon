@@ -1,4 +1,4 @@
-<div class="questions-wrapper">
+<!-- <div class="questions-wrapper">
 <section class="clearfix">
    <div id="question-title">How to add service worker in PWA?</div>
    <p id="question-description">
@@ -46,4 +46,20 @@
       </div>
    </section>
 </div>
+</div> -->
+
+
+
+ <div class="questions-wrapper">
+<section class="clearfix" *ngFor="let i of questions.questions">
+   <div id="question-title">{{i.title}}</div>
+   <p id="question-description">
+      {{i.description}}
+   </p>
+   <div class="pull-right">
+      <label>Likes</label> <span>3</span>
+      <label>Answers</label><span>{{i.noOfAnswers}}</span>
+   </div>
+</section>
+
 </div>

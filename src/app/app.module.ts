@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,6 +13,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { MyQuestionsComponent } from './my-questions/my-questions.component';
 import { AskAQuestionComponent } from './ask-aquestion/ask-aquestion.component';
 import { SubquestionsComponent } from './questions/subquestions/subquestions.component';
+import { QuestionsService } from './questions/questions.service';
 const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
@@ -23,10 +25,11 @@ const routes: Routes = [
       { path: 'askAQuestion', component: AskAQuestionComponent }
     ]
   },
+  
   // { path: 'questions', component: QuestionsComponent, pathMatch: 'full' },
   // { path: 'myQuestions', component: MyQuestionsComponent },
-  // { path: 'askAQuestion', component: AskAQuestionComponent },
-  { path: '', pathMatch: 'full', redirectTo: '/login' }
+  // // { path: 'askAQuestion', component: AskAQuestionComponent },
+  // { path: '', pathMatch: 'full', redirectTo: '/login' }
 ];
 
 @NgModule({
@@ -43,12 +46,13 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [QuestionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
