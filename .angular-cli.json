@@ -10,7 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "pwabuilder-sw.js"
+        "service-worker.js"
       ],
       "index": "index.html",
       "main": "main.ts",
