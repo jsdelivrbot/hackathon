@@ -13,12 +13,19 @@ import { MyQuestionsComponent } from './my-questions/my-questions.component';
 import { AskAQuestionComponent } from './ask-aquestion/ask-aquestion.component';
 import { SubquestionsComponent } from './questions/subquestions/subquestions.component';
 const routes: Routes = [
-  /*{ path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: DashboardComponentComponent },*/
-  { path: 'questions', component: QuestionsComponent, pathMatch: 'full' },
-  { path: 'myQuestions', component: MyQuestionsComponent },
-  { path: 'askAQuestion', component: AskAQuestionComponent },
+  {
+    path: 'dashboard', component: DashboardComponent,
+    children: [
+      { path: 'questions', component: QuestionsComponent, pathMatch: 'full' },
+      { path: 'myQuestions', component: MyQuestionsComponent },
+      { path: 'askAQuestion', component: AskAQuestionComponent }
+    ]
+  },
+  // { path: 'questions', component: QuestionsComponent, pathMatch: 'full' },
+  // { path: 'myQuestions', component: MyQuestionsComponent },
+  // { path: 'askAQuestion', component: AskAQuestionComponent },
   { path: '', pathMatch: 'full', redirectTo: '/login' }
 ];
 
