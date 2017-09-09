@@ -1,5 +1,13 @@
-<div class="search">
-    <input type="text" placeholder="Search a Question">
+<div>
+    <div class="search">
+        <input type="text" placeholder="Search a Question">
+    </div>
+    <div (click)="showCompleteQuestion()">
+        <app-subquestions [hideAnswerBlock]="hideAnsBlock"></app-subquestions>
+    </div>
+    <div>
+        <app-subquestions [hideAnswerBlock]="hideAnsBlock"></app-subquestions>
+    </div>
 </div>
 <!-- <ul>
    <li *ngFor="let i of questions.questions" >
@@ -8,3 +16,11 @@
 </ul> -->
 <app-subquestions [questions] = questions ></app-subquestions>
 
+<div>
+    <div class="container text-center">
+        <a [routerLink]="['dashboard/questions']">
+            < Back</a>
+        <a class="text-center" href="#">DigiGyan App</a>
+    </div>
+    <router-outlet></router-outlet>
+</div>

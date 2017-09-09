@@ -9,17 +9,17 @@ import { QuestionsService } from './questions.service';
   providers: [QuestionsService]
 })
 export class QuestionsComponent implements OnInit {
-  
-   observableQuestions: Observable<any>
-   questions:any;
-   errorMessage: String;
+
+  observableQuestions: Observable<any>
+  questions: any;
+  errorMessage: String;
   constructor(private _questionService: QuestionsService) {
 
-}
+  }
   ngOnInit() {
     this.observableQuestions = this._questionService.getDataWithObservable();
     this.observableQuestions.subscribe(
-    questions => this.questions = questions,
-            error =>  this.errorMessage = <any>error);
+      questions => this.questions = questions,
+      error => this.errorMessage = <any>error);
   }
 }
