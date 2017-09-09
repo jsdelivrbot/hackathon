@@ -14,6 +14,7 @@
 .dashboard-links ul li a{
     text-decoration: none;
 }
+
 .dashboard-links ul li:hover {
     background-color: #337ab7;
     color: #fff;

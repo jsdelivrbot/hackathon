@@ -23,7 +23,6 @@ export class RegisterComponent implements OnInit {
     });
   }
   onSubmit(formValue) {
-    console.log(formValue);
     if(formValue.tag1 === true && formValue.tag2 === true && formValue.tag3 === true){
       formValue.skills = []; 
       formValue.skills.push('HTML','CSS', 'Javascript');
