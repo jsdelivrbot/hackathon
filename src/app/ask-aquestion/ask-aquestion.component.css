@@ -1,0 +1,24 @@
+.ask-a-question-wrapper {
+    margin-top: 35px;
+}
+.ask-a-question-wrapper #title-content input[type="text"],
+.ask-a-question-wrapper #desc-content textarea {
+    width: 100%;
+    border: 1px solid #428bca;
+    margin-bottom:10px; 
+    padding: 15px;
+}
+.ask-a-question-wrapper #title-content input[type="text"]::-webkit-input-placeholder,
+.ask-a-question-wrapper #desc-content textarea {
+    text-align: left;
+}
+.submit-question {
+    text-align: center;
+}
+.ask-a-question-wrapper  .submit-question button {
+    margin: 0 auto;
+    width:40%;
+}
+.ask-tags {
+    font-size:30px;
+}
