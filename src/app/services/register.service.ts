@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class RegisterService {
-    base_url = 'http://192.168.1.9:3000';
+    base_url = 'http://localhost:3000';
     constructor(private _http: Http) { }
 
     postUserData(userDetails) {
