@@ -12,10 +12,10 @@ import { QuestionsComponent } from './questions/questions.component';
 import { MyQuestionsComponent } from './my-questions/my-questions.component';
 import { AskAQuestionComponent } from './ask-aquestion/ask-aquestion.component';
 import { SubquestionsComponent } from './questions/subquestions/subquestions.component';
-import { QuestionsService } from './questions/questions.service';
+import { QuestionsService } from './services/questions.service';
 import { LoginService } from "./services/login.service";
 import { RegisterService } from "./services/register.service";
-import { AskQuestion } from "./services/askQuestion.service";
+import { AskQuestion } from "./services/ask-question.service";
 import { SearchFilterPipe } from './questions/subquestions/subquestions.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },

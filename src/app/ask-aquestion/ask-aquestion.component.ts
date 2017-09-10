@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { AskQuestion } from '../services/askQuestion.service';
+import { AskQuestion } from '../services/ask-question.service';
 
 @Component({
   selector: 'app-ask-aquestion',
