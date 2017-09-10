@@ -6,7 +6,8 @@ import {
     CanActivateChild
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import * as localforage from "localforage";
+declare var require:Function;
+const localforage = require('localforage');
 
 @Injectable()
 export class LoginActivate implements CanActivate {

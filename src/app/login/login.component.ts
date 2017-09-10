@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
-import * as localforage from "localforage";
+declare var require:Function;
+const localforage = require('localforage');
 
 @Component({
   selector: 'app-login',

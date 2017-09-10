@@ -29,7 +29,8 @@ var Questions = new Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
     tag: { type: Array },
-    answers: { type: Array }
+    answers: { type: Array },
+    username: { type: String, required: true }
 });
 
 //Answers Schema

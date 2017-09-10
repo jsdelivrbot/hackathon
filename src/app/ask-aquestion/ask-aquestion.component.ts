@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { AskQuestion } from '../services/ask-question.service';
+declare var require:Function;
+const localforage = require('localforage');
 
 @Component({
   selector: 'app-ask-aquestion',
@@ -41,6 +43,9 @@ export class AskAQuestionComponent implements OnInit {
     }
     question.answers = [];
     var questPost = this._askQuestionService.postQuestion(question);
+    localforage.getItem('userDetails', function (err, value) {
+      console.log(value);
+    });
     questPost.then(function (a) {
       return a.json();
     })

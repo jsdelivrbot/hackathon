@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as localforage from "localforage";
+declare var require:Function;
+const localforage = require('localforage');
 
 @Component({
   selector: 'app-header',

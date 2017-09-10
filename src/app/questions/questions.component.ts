@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { QuestionsService } from '../services/questions.service';
-import * as localforage from "localforage";
+declare var require:Function;
+const localforage = require('localforage');
 
 @Component({
   selector: 'app-questions',
