@@ -11,7 +11,7 @@ exports.addQuestion = function (req, res) {
             res.json(data);
         }
         else {
-            console.log("failure");
+            console.log("failure", err);
             data.status = 403;
             res.json(data);
         }
