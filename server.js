@@ -52,10 +52,10 @@ app.post('/getMyQuestions', routes.questions.getMyQuestions);
 app.post('/addQuestion', routes.questions.addQuestion);
 
 // Restfull API to get the users list
-app.post('/addAnswer', routes.questions.addAnswer);
+app.post('/addAnswer', routes.answers.addAnswer);
 
 // Restfull API to get the my questions list
-app.post('/getAnswers', routes.questions.getAnswers);
+app.post('/getAnswers', routes.answers.getAnswers);
 
 var server = app.listen((process.env.PORT || 3000));
 console.log("DigiGyan Server is Up running on port 3000");

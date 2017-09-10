@@ -20,7 +20,7 @@ exports.addQuestion = function (req, res) {
 
 exports.getQuestions = function (req, res) {
     var data = {};
-    db.questionsModel.find({}, { _id: 0, team: 0 }, function (err, success) {
+    db.questionsModel.find({}, {}, function (err, success) {
         if (success) {
             console.log(success);
             data.questions = success;

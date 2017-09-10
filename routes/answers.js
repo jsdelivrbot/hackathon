@@ -6,10 +6,10 @@ exports.addAnswer = function (req, res) {
     data.username = req.body.username;
     data.like = 0;
     data.description = req.body.description;
-    data.questionid = req.body._id;
+    data.questionid = req.body.questionid;
 
     var answers = new db.answersModel(data);
-    questions.save(function (err, success) {
+    answers.save(function (err, success) {
         if (success) {
             console.log(success);
             data.status = 201;
@@ -29,7 +29,7 @@ exports.getAnswers = function (req, res) {
     db.answersModel.find({ questionid: req.body._id }, { _id: 0 }, function (err, success) {
         if (success) {
             console.log(success);
-            data.questions = success;
+            data.answers = success;
             data.status = 201;
             res.json(data);
         } else {

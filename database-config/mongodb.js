@@ -36,7 +36,7 @@ var Questions = new Schema({
 //Answers Schema
 var Answers = new Schema({
     questionid: { type: String, required: true },
-    username: { type: String, required: true },
+    username: { type: String },
     like: { type: Number, required: true },
     description: { type: String, required: true },
 });

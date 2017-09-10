@@ -19,6 +19,7 @@ import { LoginService } from "./services/login.service";
 import { RegisterService } from "./services/register.service";
 import { AskQuestion } from "./services/ask-question.service";
 import { LoginActivate } from "./services/login-activate.service";
+import { AnswerService } from "./services/answer.service";
 
 import { SearchFilterPipe } from './questions/subquestions/subquestions.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
@@ -67,7 +68,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService, QuestionsService, RegisterService, AskQuestion, LoginActivate],
+  providers: [LoginService, QuestionsService, RegisterService, AskQuestion, LoginActivate,AnswerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
