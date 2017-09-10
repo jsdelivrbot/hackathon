@@ -1,17 +1,50 @@
-<div class="modal" role="dialog" *ngIf="toggleModal">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" (click)="closeModal()" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">{{title}}</h4>
-            </div>
-            <div class="modal-body">
-                <p>{{description}}</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" (click)="closeModal()" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+<div class="questionDetail">
+  <div class="modal" role="dialog" [ngClass]="{closeModal:toggleModal}">
+    <div class="modal-dialog modalWrapper">
+      <!-- Modal content-->
+      <div class="modal-content contentWrapper">
+        <div class="modal-header headerCont">
+          <button type="button" (click)="closeModal()" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
+          <div class="text-center headingTitle">
+            DigiGyan App
+          </div>
         </div>
+        <div class="modal-body">
+          <section class="clearfix question-withanswer">
+            <div id="question-title">{{selectedQuestion.title}}</div>
+            <p id="question-description">
+              {{selectedQuestion.description}}
+            </p>
+            <div class="clearfix">
+              <div class="answers-title pull-left">Answers</div>
+              <a class="pull-right answer-link" #answerLink (click)="answerPostMethod()">You want to answer this?</a>
+            </div>
+
+            <p id="answer-description">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+              text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+              book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+              unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+              and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <p class="answer-link pull-left">Posted By Navin</p>
+            <p class="like-answer pull-right">Do you like the answer?</p>
+          </section>
+          <section>
+            <div class="answer-block" *ngIf="answerPost">
+              <div class="answer-post-main">
+                <div class="answer-post-title">My Answer</div>
+                <div class="answer-post-desc">
+                  <textarea #postAnswer rows="8" cols="50" autofocus placeholder="Description"></textarea>
+                </div>
+                <div class="submit-answer">
+                  <button type="submit" class="btn btn-primary" #submitAnswer>Submit</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

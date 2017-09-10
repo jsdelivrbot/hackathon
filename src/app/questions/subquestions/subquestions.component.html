@@ -9,22 +9,5 @@
       <label>Answers</label><span>{{i['answers'].length}}</span>
     </div>
   </section>
-  
-  <app-question-detail></app-question-detail>
-  <!--<div class="modal" role="dialog" *ngIf="toggleModal">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" (click)="closeModal()" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">{{title}}</h4>
-              </div>
-              <div class="modal-body">
-                  <p>{{description}}</p>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" (click)="closeModal()" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-          </div>
-      </div>
-  </div>-->
+  <app-question-detail [selectedQuestion]="selectedQuestion" *ngIf="toggleModal"></app-question-detail>
 </div>

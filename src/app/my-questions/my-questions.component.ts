@@ -23,7 +23,7 @@ export class MyQuestionsComponent implements OnInit {
     console.log(this.input);
   }
   ngOnInit() {
-    this.url = "http://192.168.1.7:3000/getQuestions";
+    this.url = "http://localhost:3000/getQuestions";
     this.observableQuestions = this._questionService.getDataWithObservable(this.url);
     this.observableQuestions.subscribe(
       questions => this.questions = questions,

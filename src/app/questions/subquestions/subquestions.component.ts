@@ -7,16 +7,17 @@ import { Pipe, PipeTransform } from '@angular/core';
   styleUrls: ['./subquestions.component.css']
 })
 export class SubquestionsComponent implements OnInit {
-  answerPost:boolean = false;
+  answerPost: boolean = false;
   toggleModal: boolean = false;
-  title: String = "";
-  description: String = "";
-
-  filterargs =  '1.How to add service worker in PWA?';
+  selectedQuestion: any;
+  questionDetail = {};
+  filterargs = '1.How to add service worker in PWA?';
   @Input() questions;
   @Input() hideAnswerBlock;
   @Input() searchInput;
+
   constructor() { }
+
   answerPostMethod() {
     this.answerPost = true;
   }
@@ -25,8 +26,7 @@ export class SubquestionsComponent implements OnInit {
   }
   openQuestionDetail(question) {
     this.toggleModal = !this.toggleModal;
-    this.title = question.title;
-    this.description = question.description;
+    this.selectedQuestion = question;
   }
   closeModal() {
     this.toggleModal = false;
@@ -34,18 +34,18 @@ export class SubquestionsComponent implements OnInit {
 }
 
 @Pipe({
-    name: 'searchfilter',
-    pure: false
+  name: 'searchfilter',
+  pure: false
 })
 
 export class SearchFilterPipe implements PipeTransform {
-    transform(items: any[], filter: any): any {
-        if (!items || !filter) {
-            return items;
-        }
-          console.log(items);
-          console.log(filter);
-       //  filter items array, items which match and return true will be kept, false will be filtered out
-       return items.filter(item => item.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+  transform(items: any[], filter: Object): any {
+    if (!items || !filter) {
+      return items;
     }
+    console.log(items);
+    console.log(filter);
+    //  filter items array, items which match and return true will be kept, false will be filtered out
+    return items.filter(item => item.title.indexOf(filter) !== -1);
+  }
 }

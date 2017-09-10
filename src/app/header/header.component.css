@@ -1,0 +1,13 @@
+.headerWrapper .headerTitle {
+    border:1px solid #3b5998;
+    background-color: #3b5998;
+}
+.headerWrapper .brand-name a{
+    color: #fff;
+}
+.headerWrapper .brand-name {
+    height: 55px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
