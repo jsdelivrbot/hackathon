@@ -26,22 +26,50 @@ export class AskAQuestionComponent implements OnInit {
   }
 
   onSubmit(question) {
+    question.tag = [];
     let $this = this;
     if (question.tag1 === true && question.tag2 === true && question.tag3 === true) {
-      question.tag = [];
       question.tag.push('HTML', 'CSS', 'Javascript');
       delete question.tag1;
       delete question.tag2;
       delete question.tag3;
-    }
-    else if (question.tag1 === true) {
-      question.tag = [];
+    } else if (question.tag1 === true && question.tag2 === true) {
+      question.tag.push('HTML', 'CSS');
+      delete question.tag1;
+      delete question.tag2;
+      delete question.tag3;
+    } else if (question.tag1 === true && question.tag3 === true) {
+      question.tag.push('HTML', 'Javascript');
+      delete question.tag1;
+      delete question.tag2;
+      delete question.tag3;
+    } else if (question.tag2 === true && question.tag3 === true) {
+      question.tag.push('CSS', 'Javascript');
+      delete question.tag1;
+      delete question.tag2;
+      delete question.tag3;
+    } else if (question.tag1 === true) {
       question.tag.push('HTML');
       delete question.tag1;
       delete question.tag2;
       delete question.tag3;
+    } else if (question.tag2 === true) {
+      question.tag.push('CSS');
+      delete question.tag1;
+      delete question.tag2;
+      delete question.tag3;
+    } else if (question.tag3 === true) {
+      question.tag.push('Javascript');
+      delete question.tag1;
+      delete question.tag2;
+      delete question.tag3;
+    } else if (question.tag1 === "" && question.tag2 === "" && question.tag3 === "") {
+      question.tag.push();
+      delete question.tag1;
+      delete question.tag2;
+      delete question.tag3;
     }
-    question.answers = [];
+    question.questions = [];
     var questPost = this._askQuestionService.postQuestion(question);
     localforage.getItem('userDetails', function (err, value) {
       console.log(value);

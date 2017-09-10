@@ -26,10 +26,45 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(formValue) {
+    formValue.tag = [];
     let $this = this;
     if (formValue.tag1 === true && formValue.tag2 === true && formValue.tag3 === true) {
-      formValue.tag = [];
       formValue.tag.push('HTML', 'CSS', 'Javascript');
+      delete formValue.tag1;
+      delete formValue.tag2;
+      delete formValue.tag3;
+    } else if (formValue.tag1 === true && formValue.tag2 === true) {
+      formValue.tag.push('HTML', 'CSS');
+      delete formValue.tag1;
+      delete formValue.tag2;
+      delete formValue.tag3;
+    } else if (formValue.tag1 === true && formValue.tag3 === true) {
+      formValue.tag.push('HTML', 'Javascript');
+      delete formValue.tag1;
+      delete formValue.tag2;
+      delete formValue.tag3;
+    } else if (formValue.tag2 === true && formValue.tag3 === true) {
+      formValue.tag.push('CSS', 'Javascript');
+      delete formValue.tag1;
+      delete formValue.tag2;
+      delete formValue.tag3;
+    } else if (formValue.tag1 === true) {
+      formValue.tag.push('HTML');
+      delete formValue.tag1;
+      delete formValue.tag2;
+      delete formValue.tag3;
+    } else if (formValue.tag2 === true) {
+      formValue.tag.push('CSS');
+      delete formValue.tag1;
+      delete formValue.tag2;
+      delete formValue.tag3;
+    } else if (formValue.tag3 === true) {
+      formValue.tag.push('Javascript');
+      delete formValue.tag1;
+      delete formValue.tag2;
+      delete formValue.tag3;
+    } else if (formValue.tag1 === "" && formValue.tag2 === "" && formValue.tag3 === "") {
+      formValue.tag.push();
       delete formValue.tag1;
       delete formValue.tag2;
       delete formValue.tag3;
@@ -49,9 +84,9 @@ export class RegisterComponent implements OnInit {
           $this.hideErr = true;
         }
       })
-      $this.hideForm = false;
-      $this.hideErr = false;
-      this.registerForm.reset();
+    $this.hideForm = false;
+    $this.hideErr = false;
+    this.registerForm.reset();
   }
 
   redirectToLogin() {

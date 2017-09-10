@@ -1,55 +1,46 @@
 <div class="registerModule">
-   <div class="container">
-      <div class="register-module-title">Register</div>
-      <div [hidden]="!hideForm" class="clearfix">
-         <div class="loginLink">
-            <a (click)="redirectToLogin()">Login</a>
-         </div>
-         <div class="alert alert-success text-center">
-            Successfully Registerd
-         </div>
+  <div class="container">
+    <div class="register-module-title">Register</div>
+    <div [hidden]="!hideForm" class="clearfix">
+      <div class="loginLink">
+        <a (click)="redirectToLogin()">Login</a>
       </div>
-      <div [hidden]="!hideErr">
-         <div class="alert alert-danger">
-            Registration Unsuccesful
-         </div>
+      <div class="alert alert-success text-center">
+        Successfully Registerd
       </div>
-      <div>
-         <form [formGroup]='registerForm' (ngSubmit)="onSubmit(registerForm.value)">
-         <div class="form-group">
-            <!-- <label for="username">Username</label> -->
-            <input type="text" class="form-control" placeholder="Username" name="username" required formControlName='username'>
-         </div>
-         <div class="form-group">
-            <!-- <label for="password">Password</label> -->
-            <input type="password" class="form-control" placeholder="Password" id="password" name="password" required formControlName='password'>
-         </div>
-         <div class="register-module-title">Tags</div>
-         <div class="round">
-            <input type="checkbox" id="tag1" formControlName='tag1'/>HTML
-            <label for="tag1"></label>
-         </div>
-         <div class="round">
-            <input type="checkbox" id="tag2" formControlName='tag2'/>CSS
-            <label for="tag2"></label>
-         </div>
-         <div class="round">
-            <input type="checkbox" id="tag3" formControlName='tag3'/>
-            <label for="tag3"></label>Javascript
-         </div>
-         <!-- <div>
-            <input type="checkbox" formControlName='tag1' />HTML
-            </div>
-            <div>
-            <input type="checkbox" formControlName='tag2' />CSS
-            </div>
-            <div>
-            <input type="checkbox" formControlName='tag3' />Javascript
-            </div> -->
-         <div class="text-center">
-            <button type="submit" class="btn btn-primary" [disabled]='!registerForm.valid'>Submit</button>
-         </div>
-         </form>
+    </div>
+    <div [hidden]="!hideErr">
+      <div class="alert alert-danger">
+        Registration Unsuccesful
       </div>
-   </div>
+    </div>
+    <div>
+      <form [formGroup]='registerForm' (ngSubmit)="onSubmit(registerForm.value)">
+        <div class="form-group">
+          <!-- <label for="username">Username</label> -->
+          <input type="text" class="form-control" placeholder="Username" name="username" required formControlName='username'>
+        </div>
+        <div class="form-group">
+          <!-- <label for="password">Password</label> -->
+          <input type="password" class="form-control" placeholder="Password" id="password" name="password" required formControlName='password'>
+        </div>
+        <div class="register-module-title">Tags</div>
+        <div class="round">
+          <input type="checkbox" id="tag1" formControlName='tag1' />HTML
+          <label for="tag1"></label>
+        </div>
+        <div class="round">
+          <input type="checkbox" id="tag2" formControlName='tag2' />CSS
+          <label for="tag2"></label>
+        </div>
+        <div class="round">
+          <input type="checkbox" id="tag3" formControlName='tag3' />Javascript
+          <label for="tag3"></label>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" [disabled]='!registerForm.valid'>Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
