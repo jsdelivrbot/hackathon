@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { QuestionsService } from '../services/questions.service';
+import * as localforage from "localforage";
 
 @Component({
   selector: 'app-questions',
@@ -16,9 +17,8 @@ export class QuestionsComponent implements OnInit {
   url: any;
   errorMessage: String;
   hideAnsBlock: boolean = false;
-  constructor(private _questionService: QuestionsService) {
+  constructor(private _questionService: QuestionsService) { }
 
-  }
   searchContent(value) {
     this.input = value;
     console.log(this.input);

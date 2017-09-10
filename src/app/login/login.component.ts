@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import * as localforage from "localforage";
 
 @Component({
   selector: 'app-login',
@@ -24,17 +25,24 @@ export class LoginComponent implements OnInit {
   onSubmit(name) {
     let $this = this;
     let user = this._login.postUserDetils(name);
-    user.then(function(a) {
-      return a.json();
+    user.then(function (response) {
+      return response.json();
     })
-    .then(function(json) {
-      if(json.status === 201) {
-         $this._router.navigate(['/dashboard']);
-      }
-      else if(json.status === 403) {
-        $this.showError = false;
-      }
-    })
+      .then(function (json) {
+        if (json.status === 201) {
+          console.log(json);
+          localforage.setItem('userDetails', json.user, function (err) {
+            localforage.getItem('userDetails', function (err, value) {
+              console.log(value);
+              $this._router.navigate(['/dashboard']);
+            });
+          });
+        }
+        else if (json.status === 403) {
+          localforage.setItem('userDetails', undefined, function (err) { });
+          $this.showError = false;
+        }
+      })
 
   }
 
