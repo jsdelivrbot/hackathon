@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .headerWrapper .headerTitle {
     border:1px solid #3b5998;
     background-color: #3b5998;
@@ -18,4 +19,8 @@
     font-size: 16px;
     float: right;
     text-decoration: none;
+=======
+.main-heading {
+    text-align: center;
+>>>>>>> Stashed changes
 }
