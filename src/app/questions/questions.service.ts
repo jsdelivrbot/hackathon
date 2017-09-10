@@ -7,10 +7,10 @@ import 'rxjs/add/operator/map';
 
 export class QuestionsService {
     // url = "https://api.myjson.com/bins/xh68h";
-    url = "https://api.myjson.com/bins/j0c8h";
+    //url = "https://api.myjson.com/bins/j0c8h";
     constructor(private http:Http) { }
-    getDataWithObservable(): Observable<any> {
-        return this.http.get(this.url)
+    getDataWithObservable(url): Observable<any> {
+        return this.http.get(url)
 	        .map(this.FetchData)
 	        .catch(this.handleErrorObservable);
     }

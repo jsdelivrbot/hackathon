@@ -1,3 +1,26 @@
-<p>
-  my-questions works!
-</p>
+<div>
+    <div class="search">
+        <input type="text" #searchInput (change)="searchContent(searchInput.value)" placeholder="Search a Question">
+    </div>
+    <!-- <div>
+        <app-subquestions [hideAnswerBlock]="hideAnsBlock"></app-subquestions>
+    </div>
+    <div>
+        <app-subquestions [hideAnswerBlock]="hideAnsBlock"></app-subquestions>
+    </div> -->
+</div>
+<!-- <ul>
+   <li *ngFor="let i of questions.questions" >
+    {{i.name}}
+  </li>
+</ul>-->
+<app-subquestions [questions] = questions [searchInput]=input></app-subquestions>
+
+<!-- <div>
+    <div class="container text-center">
+        <a [routerLink]="['dashboard/questions']">
+            < Back</a>
+        <a class="text-center" href="#">DigiGyan App</a>
+    </div>
+    <router-outlet></router-outlet>
+</div> -->

@@ -1,15 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { QuestionsService } from '../questions/questions.service';
 
 @Component({
   selector: 'app-my-questions',
   templateUrl: './my-questions.component.html',
-  styleUrls: ['./my-questions.component.css']
+  styleUrls: ['../questions/questions.component.css','./my-questions.component.css']
 })
 export class MyQuestionsComponent implements OnInit {
 
-  constructor() { }
+   observableQuestions: Observable<any>
+  questions: any;
+  input:any;
+  url:any;
+  errorMessage: String;
+  hideAnsBlock: boolean = false;
+  constructor(private _questionService: QuestionsService) {
 
+  }
+  searchContent(value) {
+    this.input = value;
+    console.log(this.input);
+  }
   ngOnInit() {
+    this.url = "https://api.myjson.com/bins/ec34x";
+    this.observableQuestions = this._questionService.getDataWithObservable(this.url);
+    this.observableQuestions.subscribe(
+      questions => this.questions = questions,
+      error => this.errorMessage = <any>error);
+      console.log(this.questions);
   }
 
 }
