@@ -25,6 +25,7 @@ app.use((req,res,next) => {
 var routes = {};
 routes.user = require('./routes/user.js');
 routes.questions = require('./routes/questions.js');
+routes.answers = require('./routes/answers.js');
 routes.database = require('./database-config/mongodb.js');
 
 // Restful API to get the home page
@@ -49,6 +50,12 @@ app.post('/getMyQuestions', routes.questions.getMyQuestions);
 
 // Restfull API to get the users list
 app.post('/addQuestion', routes.questions.addQuestion);
+
+// Restfull API to get the users list
+app.post('/addAnswer', routes.questions.addAnswer);
+
+// Restfull API to get the my questions list
+app.post('/getAnswers', routes.questions.getAnswers);
 
 var server = app.listen((process.env.PORT || 3000));
 console.log("DigiGyan Server is Up running on port 3000");
