@@ -33,3 +33,20 @@ exports.getQuestions = function (req, res) {
         }
     }).sort({ _id: -1 });
 };
+
+exports.getMyQuestions = function (req, res) {
+    var data = {};
+    console.log(req.body);
+    db.questionsModel.find({ username: req.body.username }, { _id: 0 }, function (err, success) {
+        if (success) {
+            console.log(success);
+            data.questions = success;
+            data.status = 201;
+            res.json(data);
+        } else {
+            console.log("failure", err);
+            data.status = 401;
+            res.json(data);
+        }
+    }).sort({ _id: -1 });
+};
