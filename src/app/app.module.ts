@@ -15,7 +15,7 @@ import { SubquestionsComponent } from './questions/subquestions/subquestions.com
 import { QuestionsService } from './questions/questions.service';
 import { LoginService } from "./services/login.service";
 import { RegisterService } from "./services/register.service";
-
+import { SearchFilterPipe } from './questions/subquestions/subquestions.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
@@ -49,7 +49,8 @@ const routes: Routes = [
     QuestionsComponent,
     MyQuestionsComponent,
     AskAQuestionComponent,
-    SubquestionsComponent
+    SubquestionsComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
