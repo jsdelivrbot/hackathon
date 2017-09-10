@@ -33,11 +33,7 @@ const routes: Routes = [
       { path: 'askAQuestion', component: AskAQuestionComponent }
     ]
   },
-
-  // { path: 'questions', component: QuestionsComponent, pathMatch: 'full' },
-  // { path: 'myQuestions', component: MyQuestionsComponent },
-  // // { path: 'askAQuestion', component: AskAQuestionComponent },
-  // { path: '', pathMatch: 'full', redirectTo: '/login' }
+  { path: '', pathMatch: 'full', redirectTo: '/login' }
 ];
 
 @NgModule({
