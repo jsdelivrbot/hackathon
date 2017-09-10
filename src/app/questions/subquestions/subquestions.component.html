@@ -50,16 +50,16 @@
 
 
 
- <div class="questions-wrapper">
-<section class="clearfix" *ngFor="let i of questions.questions | searchfilter:searchInput">
-   <div id="question-title">{{i.title}}</div>
-   <p id="question-description">
+<div class="questions-wrapper">
+  <section class="clearfix" *ngFor="let i of questions.questions | searchfilter:searchInput">
+    <div id="question-title">{{i.title}}</div>
+    <p id="question-description">
       {{i.description}}
-   </p>
-   <div class="pull-right">
+    </p>
+    <div class="pull-right">
       <label>Likes</label> <span>3</span>
-      <label>Answers</label><span>{{i.noOfAnswers}}</span>
-   </div>
-</section>
+      <label>Answers</label><span>{{i['answers'].length}}</span>
+    </div>
+  </section>
 
 </div>

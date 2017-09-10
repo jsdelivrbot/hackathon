@@ -20,13 +20,14 @@ exports.addQuestion = function (req, res) {
 
 exports.getQuestions = function (req, res) {
     var data = {};
-    db.questionsModel.find({}, { _id: 0, description: 0, team: 0 }, function (err, success) {
+    db.questionsModel.find({}, { _id: 0, team: 0 }, function (err, success) {
         if (success) {
             console.log(success);
             data.questions = success;
             data.status = 201;
             res.json(data);
         } else {
+            console.log("failure", err);
             data.status = 401;
             res.json(data);
         }

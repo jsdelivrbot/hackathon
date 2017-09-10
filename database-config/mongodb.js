@@ -28,7 +28,7 @@ var User = new Schema({
 var Questions = new Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
-    tag: { type: Array, required: true },
+    tag: { type: Array },
     answers: { type: Array }
 });
 

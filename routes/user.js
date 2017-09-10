@@ -32,6 +32,7 @@ exports.login = function (req, res) {
             res.json(data);
         }
         else {
+            console.log(err);
             data.user = {};
             data.status = 403;
             res.json(data);
@@ -48,6 +49,7 @@ exports.logout = function (req, res) {
         res.json(data);
     }
     else {
+        console.log(err);
         data.status = 401;
         res.json(data);
     }
