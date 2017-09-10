@@ -14,6 +14,8 @@ import { AskAQuestionComponent } from './ask-aquestion/ask-aquestion.component';
 import { SubquestionsComponent } from './questions/subquestions/subquestions.component';
 import { QuestionsService } from './questions/questions.service';
 import { LoginService } from "./services/login.service";
+import { RegisterService } from "./services/register.service";
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
@@ -30,7 +32,7 @@ const routes: Routes = [
       { path: 'askAQuestion', component: AskAQuestionComponent }
     ]
   },
-  
+
   // { path: 'questions', component: QuestionsComponent, pathMatch: 'full' },
   // { path: 'myQuestions', component: MyQuestionsComponent },
   // // { path: 'askAQuestion', component: AskAQuestionComponent },
@@ -58,7 +60,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService,QuestionsService],
+  providers: [LoginService, QuestionsService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

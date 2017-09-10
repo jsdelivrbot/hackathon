@@ -13,6 +13,7 @@ export class QuestionsComponent implements OnInit {
   observableQuestions: Observable<any>
   questions: any;
   errorMessage: String;
+  hideAnsBlock: boolean = false;
   constructor(private _questionService: QuestionsService) {
 
   }

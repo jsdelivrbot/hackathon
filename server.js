@@ -15,19 +15,25 @@ app.use(clientSessions({
 	secret: '0GBlJZ9EKBt2Zbi2flRPvztczCewBxXK' // Secret Key
 }));
 
+app.use((req,res,next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // Routes to define the call backs
 var routes = {};
 routes.user = require('./routes/user.js');
 routes.questions = require('./routes/questions.js');
 routes.database = require('./database-config/mongodb.js');
 
-// // Restful API to get the home page
-// app.get('/', function(req, res){
-// 	res.sendfile('/dist/index.html');
-// });
+// Restful API to get the home page
+app.get('/', function(req, res){
+	res.sendfile('/dist/index.html');
+});
 
 // Restfull API to login
-app.post('/login', routes.user.login);
+app.post('/checkLogin', routes.user.login);
 
 // Restful API for user registration
 app.post('/register', routes.user.register);

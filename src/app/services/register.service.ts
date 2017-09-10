@@ -4,11 +4,12 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class LoginService {
+export class RegisterService {
     base_url = 'http://192.168.1.8:3000';
     constructor(private _http: Http) { }
 
-    postUserDetils(userDetails) {
-        return this._http.post(this.base_url + '/checkLogin', userDetails).toPromise();
+    postUserData(userDetails) {
+        console.log("userData", userDetails);
+        return this._http.post(this.base_url + '/register', userDetails).toPromise();
     }
 }

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var mongodbURL = 'mongodb://digigyan:digigyan1234@ds131854.mlab.com:31854/digigyan';
 var mongodbOptions = {};
+mongoose.Promise = require('bluebird');
 
 // MongoDB connection
 mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
@@ -19,8 +20,8 @@ var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
 var User = new Schema({
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    tag: { type: Array, required: true },
-    questions: { type: Array, required: true }
+    tag: { type: Array },
+    questions: { type: Array }
 });
 
 //Questions Schema

@@ -11,7 +11,7 @@ exports.register = function (req, res) {
             res.json(data);
         }
         else {
-            console.log("failure");
+            console.log("failure", err);
             data.status = 403;
             res.json(data);
         }
@@ -20,7 +20,7 @@ exports.register = function (req, res) {
 
 exports.login = function (req, res) {
     var data = {};
-    console.log(req.body);
+    console.log("body",req.body);
     db.userModel.findOne(req.body, function (err, success) {
         if (success) {
             console.log(success);
