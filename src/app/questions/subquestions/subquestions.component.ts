@@ -8,7 +8,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SubquestionsComponent implements OnInit {
   answerPost:boolean = false;
-  
+  toggleModal: boolean = false;
+  title: String = "";
+  description: String = "";
+
   filterargs =  '1.How to add service worker in PWA?';
   @Input() questions;
   @Input() hideAnswerBlock;
@@ -20,16 +23,21 @@ export class SubquestionsComponent implements OnInit {
   ngOnInit() {
     console.log(this.questions);
   }
-
+  openQuestionDetail(question) {
+    this.toggleModal = !this.toggleModal;
+    this.title = question.title;
+    this.description = question.description;
+  }
+  closeModal() {
+    this.toggleModal = false;
+  }
 }
-
-/* serach filter */
-
 
 @Pipe({
     name: 'searchfilter',
     pure: false
 })
+
 export class SearchFilterPipe implements PipeTransform {
     transform(items: any[], filter: Object): any {
         if (!items || !filter) {

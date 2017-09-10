@@ -1,57 +1,5 @@
-<!-- <div class="questions-wrapper">
-<section class="clearfix">
-   <div id="question-title">How to add service worker in PWA?</div>
-   <p id="question-description">
-      It is a long established fact that a reader will be distracted by the readable content of a page 
-      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
-      of letters, as opposed to using 'Content here, content here', making it look like readable English. 
-      Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
-      and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
-   </p>
-   <div class="pull-right">
-      <label>Likes</label> <span>3</span>
-      <label>Answers</label><span>2</span>
-   </div>
-</section>
-<div class="answers-main" [hidden]="hideAnswerBlock">
-   <section>
-      <div class="clearfix">
-         <span class="answers-title"> Answers</span>
-         <a class="pull-right" #answerLink  id="answer-link" (click)="answerPostMethod()">You want to answer this?</a>
-      </div>
-      <div class="answers-contet">
-         It is a long established fact that a reader will be distracted by the readable content of a page 
-         when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here, content here', making it look like readable English. 
-         Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
-         and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
-      </div>
-      <div class="post-details">
-         <label>Posted by</label> <span #postedUser>Vivaan</span>
-         <a class="pull-right" #likeAnswer id="like-answer">Do you like this?</a>
-      </div>
-   </section>
-   <section>
-      <div class="answer-block" *ngIf="answerPost">
-         <div class="answer-post-main">
-            <span class="answer-post-title">My Answer</span>
-            <div id="answer-post-desc">
-               <textarea #postAnswer rows="8" cols="50" autofocus placeholder="Description" >
-               </textarea>
-            </div>
-              <div class="submit-answer">
-                <button type="submit" class="btn btn-primary" #submitAnswer>Submit</button>
-              </div>
-         </div>
-      </div>
-   </section>
-</div>
-</div> -->
-
-
-
 <div class="questions-wrapper">
-  <section class="clearfix" *ngFor="let i of questions.questions | searchfilter:searchInput">
+  <section class="clearfix" *ngFor="let i of questions.questions | searchfilter:searchInput" (click)="openQuestionDetail(i)"> 
     <div id="question-title">{{i.title}}</div>
     <p id="question-description">
       {{i.description}}
@@ -61,5 +9,22 @@
       <label>Answers</label><span>{{i['answers'].length}}</span>
     </div>
   </section>
-
+  
+  <app-question-detail></app-question-detail>
+  <!--<div class="modal" role="dialog" *ngIf="toggleModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" (click)="closeModal()" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">{{title}}</h4>
+              </div>
+              <div class="modal-body">
+                  <p>{{description}}</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" (click)="closeModal()" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>-->
 </div>

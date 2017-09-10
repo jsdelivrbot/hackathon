@@ -3,6 +3,9 @@
     margin-bottom: 10px;
     border-bottom: 1px solid #D3D3D3;
 }
+.questions-wrapper .modal {
+    display: block;
+}
 .questions-wrapper #question-title {
     text-decoration: underline;
     font-size: 17px;

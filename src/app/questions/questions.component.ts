@@ -12,8 +12,8 @@ export class QuestionsComponent implements OnInit {
 
   observableQuestions: Observable<any>
   questions: any;
-  input:any;
-  url:any;
+  input: any;
+  url: any;
   errorMessage: String;
   hideAnsBlock: boolean = false;
   constructor(private _questionService: QuestionsService) {
@@ -24,11 +24,11 @@ export class QuestionsComponent implements OnInit {
     console.log(this.input);
   }
   ngOnInit() {
-    this.url = "https://api.myjson.com/bins/j0c8h"
+    this.url = "http://192.168.1.8:3000/getQuestions";
     this.observableQuestions = this._questionService.getDataWithObservable(this.url);
     this.observableQuestions.subscribe(
       questions => this.questions = questions,
       error => this.errorMessage = <any>error);
-      console.log(this.questions);
+    console.log(this.questions);
   }
 }

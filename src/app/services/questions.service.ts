@@ -6,8 +6,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class QuestionsService {
-    
-    url = "http://192.168.1.9:3000/getQuestions";
     constructor(private http: Http) { }
     getDataWithObservable(url): Observable<any> {
         return this.http.get(url)

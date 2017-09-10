@@ -23,7 +23,7 @@ export class MyQuestionsComponent implements OnInit {
     console.log(this.input);
   }
   ngOnInit() {
-    this.url = "https://api.myjson.com/bins/ec34x";
+    this.url = "http://192.168.1.8:3000/getQuestions";
     this.observableQuestions = this._questionService.getDataWithObservable(this.url);
     this.observableQuestions.subscribe(
       questions => this.questions = questions,
