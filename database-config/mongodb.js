@@ -29,7 +29,7 @@ var Questions = new Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
     tag: { type: Array, required: true },
-    answers: { type: Array, required: true }
+    answers: { type: Array }
 });
 
 //Answers Schema

@@ -1,15 +1,20 @@
 <div class="registerModule">
   <div class="container">
     <h1>Register</h1>
-    <div [hidden]="!hideForm">
-      <div class="alert alert-success">
-        Successfully Registerd
-      </div>
-      <div>
+    <div [hidden]="!hideForm" class="clearfix">
+      <div class="loginLink">
         <a (click)="redirectToLogin()">Login</a>
       </div>
+      <div class="alert alert-success text-center">
+        Successfully Registerd
+      </div>
     </div>
-    <div [hidden]="hideForm">
+    <div [hidden]="!hideErr">
+      <div class="alert alert-danger">
+        Registration Unsuccesful
+      </div>
+    </div>
+    <div>
       <form [formGroup]='registerForm' (ngSubmit)="onSubmit(registerForm.value)">
         <div class="form-group">
           <label for="username">Username</label>
