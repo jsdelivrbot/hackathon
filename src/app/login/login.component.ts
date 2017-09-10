@@ -11,6 +11,7 @@ import { LoginService } from '../services/login.service';
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  showError: boolean = true;
   constructor(private _router: Router, private _login: LoginService) { }
 
   ngOnInit() {
@@ -21,13 +22,18 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(name) {
+    let $this = this;
     let user = this._login.postUserDetils(name);
-    user.then(result => {
-      debugger
-      console.log(result)
-      // if (result.status === 200) {
-      //   this._router.navigate(['/dashboard']);
-      // }
+    user.then(function(a) {
+      return a.json();
+    })
+    .then(function(json) {
+      if(json.status === 201) {
+         $this._router.navigate(['/dashboard']);
+      }
+      else if(json.status === 403) {
+        $this.showError = false;
+      }
     })
 
   }

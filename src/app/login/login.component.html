@@ -11,6 +11,9 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password" required formControlName='password'>
       </div>
+      <p class="alert alert-danger" [hidden]='showError'>
+        Username or Password mistach
+      </p>
       <div class="text-center">
         <button type="submit" class="btn btn-primary" [disabled]='!loginForm.valid'>Submit</button>
         <div class="regLink">
