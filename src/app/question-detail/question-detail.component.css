@@ -6,10 +6,15 @@
 }
 .questionDetail .modalWrapper {
     margin: 0;
+    overflow-y: initial !important; 
 }
 .questionDetail .contentWrapper {
     border-radius:0;
     box-shadow: 0 5px 15px rgba(0,0,0,0);
+}
+.questionDetail .modalCont {
+    height: 620px;
+    overflow-y: auto;
 }
 .questionDetail .headingTitle {
     font-size: 18px;
