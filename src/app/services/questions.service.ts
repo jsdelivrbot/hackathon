@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
+import * as localforage from "localforage";
 
 @Injectable()
 
@@ -14,7 +15,7 @@ export class QuestionsService {
     }
     private FetchData(res: Response) {
         let body = res.json();
-        console.log(body);
+        localforage.setItem('questionsList', body.questions.slice(0, 3), function (err) {});
         return body;
     }
     private handleErrorObservable(error: Response | any) {
