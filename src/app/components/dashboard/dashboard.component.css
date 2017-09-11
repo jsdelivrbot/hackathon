@@ -2,13 +2,14 @@
 
 .dashboard-wrapper .navbar {
     margin-bottom: 0;
+    min-height: 0px;
 }
 .dashboard-wrapper .navbar-default {
     background-color: #F8F8F8;
 }
 .dashboard-links ul li {
     list-style: none;
-    padding: 6px;
+    padding: 2px 0 2px 0;
     text-align: center;
 }
 .dashboard-links ul li a{
@@ -38,7 +39,7 @@
     padding:0px;
 }
 .dashboard-links {
-    padding: 5px;
+    padding: 6px;
 }
 .dashboard-links .row {
     margin:0px;
