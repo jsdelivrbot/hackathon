@@ -29,7 +29,7 @@ export class QuestionsComponent implements OnInit {
     localforage.getItem('questionsList', function (err, value) {
       $this.questions = { questions: value };
     });
-    this.url = "http://localhost:3000/getQuestions";
+    this.url = "https://digigyan.herokuapp.com/getQuestions";
     this.observableQuestions = this._questionService.getDataWithObservable(this.url);
     this.observableQuestions.subscribe(
       questions => this.questions = questions,

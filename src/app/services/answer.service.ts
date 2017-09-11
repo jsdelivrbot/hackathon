@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AnswerService {
-    base_url = 'http://localhost:3000';
+    base_url = 'https://digigyan.herokuapp.com';
     constructor(private _http: Http) { }
 
     postAnswer(answer) {
