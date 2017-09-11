@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { QuestionsService } from '../services/questions.service';
+import { QuestionsService } from '../../services/questions.service';
 declare var require:Function;
 const localforage = require('localforage');
 

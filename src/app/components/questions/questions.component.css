@@ -15,7 +15,7 @@
 
 .search input[type="text"]::-webkit-input-placeholder {
     text-align: center;
-    background-image: url(../../assets/images/search.png);
+    background-image: url(../../../assets/images/search.png);
     background-position: 94px center;
     background-repeat: no-repeat;
     background-size: 22px;

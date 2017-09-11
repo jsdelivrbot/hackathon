@@ -17,15 +17,22 @@ export class QuestionsService {
 
     getMyQuestions(url, data): Observable<any> {
         return this.http.post(url, data)
-            .map(this.FetchData)
+            .map(this.FetchMyData)
             .catch(this.handleErrorObservable);
     }
     
+    private FetchMyData(res: Response) {
+        let body = res.json();
+        localforage.setItem('questionsList', body.questions.slice(0, 3), function (err) {});
+        return body;
+    }
+
     private FetchData(res: Response) {
         let body = res.json();
         localforage.setItem('myQuestionsList', body.questions.slice(0, 3), function (err) {});
         return body;
     }
+
     private handleErrorObservable(error: Response | any) {
         console.error(error.message || error);
         return Observable.throw(error.message || error);

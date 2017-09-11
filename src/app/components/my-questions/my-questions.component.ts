@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { QuestionsService } from '../services/questions.service';
+import { QuestionsService } from '../../services/questions.service';
 declare var require: Function;
 const localforage = require('localforage');
 
@@ -25,8 +25,11 @@ export class MyQuestionsComponent implements OnInit {
     console.log(this.input);
   }
   ngOnInit() {
-    this.url = "http://localhost:3000/getMyQuestions";
     let $this = this;
+    localforage.getItem('myQuestionsList', function (err, value) {
+      $this.questions = { questions: value };
+    });
+    this.url = "http://localhost:3000/getMyQuestions";
     localforage.getItem('userDetails', function (err, value) {
       console.log(value);
       $this.observableQuestions = $this._questionService.getMyQuestions($this.url, value);

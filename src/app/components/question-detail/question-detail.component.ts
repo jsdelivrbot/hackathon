@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { AnswerService } from '../services/answer.service';
+import { AnswerService } from '../../services/answer.service';
 
 @Component({
   selector: 'app-question-detail',

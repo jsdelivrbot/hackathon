@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { AskQuestion } from '../services/ask-question.service';
+import { AskQuestion } from '../../services/ask-question.service';
 declare var require: Function;
 const localforage = require('localforage');
 
