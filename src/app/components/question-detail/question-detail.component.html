@@ -19,7 +19,7 @@
               <div class="answers-title pull-left">Answers</div>
               <a class="pull-right answer-link" #answerLink (click)="answerPostMethod()">You want to answer this?</a>
             </div>
-            <div *ngFor="let i of answers">
+            <div *ngFor="let i of answers" class="clearfix answer-desc">
                 <p id="answer-description">
                     {{i.description}}
                   </p>

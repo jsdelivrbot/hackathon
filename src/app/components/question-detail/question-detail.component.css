@@ -43,7 +43,6 @@
     margin-top: 8px;
 }
 .questionDetail .question-withanswer {
-    border-bottom: 1px solid #e5e5e5;
     padding-bottom: 20px;
 }
 .questionDetail .modalWrapper {
@@ -74,4 +73,7 @@
 }
 .questionDetail .answer-post-title {
     margin-bottom: 20px;
+}
+.questionDetail .answer-desc {
+    border-bottom: 1px solid #e5e5e5;
 }
