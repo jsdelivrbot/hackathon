@@ -71,7 +71,6 @@ export class AskAQuestionComponent implements OnInit {
     }
     question.answers = [];
     localforage.getItem('userDetails', function (err, value) {
-      console.log(value);
       question.username = value.username;
       var questPost = $this._askQuestionService.postQuestion(question);
       questPost.then(function (a) {
@@ -87,5 +86,6 @@ export class AskAQuestionComponent implements OnInit {
           }
         })
     });
+    this.askQuestionForm.reset();
   }
 }
